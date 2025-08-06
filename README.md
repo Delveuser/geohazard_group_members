@@ -1,6 +1,6 @@
-# Delve Underground GeoHazard Team – Interactive Employee Cards
+# Delve Underground GeoHazard and Geological Engineering Workgroup – Interactive Employee Cards
 
-This project provides an interactive HTML component designed to showcase employee members of the GeoHazard and Geological Engineering Workgroup at Delve Underground. Each member is displayed in a card layout with a headshot, name, and position. Clicking a card opens a popup containing the employee’s full biography.
+This project provides an interactive HTML component designed to showcase employee members of the GeoHazard and Geological Engineering Workgroup at Delve Underground. Each member is displayed in a card layout with a headshot, name, and position. Clicking a card opens a pop-up containing the employee’s full biography.
 
 This component is intended for embedding in the Delve Underground GeoHazard and Geological Engineering Workgroup marketing story map.
 
@@ -32,7 +32,7 @@ To add a new employee to the grid:
 ### 2. Add a Card to `index.html`
 
 Paste the following code block within the existing employee cards section of the `<body>`.  
-Note: The position of the new block determines where the employee appears in the grid.  
+Note: The position of the new block determines the employee's location in the grid.  
 Maintain approximate hierarchy order:  
 Principal → Associate → Senior Project → Project → Staff.
 
