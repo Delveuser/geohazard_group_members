@@ -14,7 +14,7 @@ This component is intended for embedding in a marketing story map or internal De
 ## File Structure
 
 ```
-/project-root
+/project-main
 │
 ├── index.html           # Main HTML file with layout and functionality
 └── /headshots/          # Folder containing square-format employee images
