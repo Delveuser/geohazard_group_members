@@ -11,6 +11,10 @@ This component is intended for embedding in the Delve Underground GeoHazard and 
 - Popup overlay with blur effect – Enhances user focus on content.
 - Keyboard support – Press `Escape` to close the popup.
 
+## Preview
+
+![Screenshot of employee cards](./screenshots/employee-cards-preview.png)
+
 ## File Structure
 
 ```
@@ -64,4 +68,4 @@ Principal → Associate → Senior Project → Project → Staff.
 
 - Image URLs assume the repository is public. If the repository is private, images may not display unless embedded via a CDN or made publicly accessible.
 - All popup content is stored inline in the HTML. If bios become too long or numerous, consider refactoring to load them dynamically.
-
+- Popup content is not scrollable if it exceeds the viewport.
