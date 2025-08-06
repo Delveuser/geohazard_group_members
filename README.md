@@ -24,6 +24,7 @@ Preview of the Interactive Employee Cards site as of August 6, 2025.
 │
 ├── index.html           # Main HTML file with layout and functionality
 └── /headshots/          # Folder containing square-format employee images
+└── /screenshots/        # Folder containing a screenshot/preview of the site
 ```
 
 ## Adding a New Team Member
