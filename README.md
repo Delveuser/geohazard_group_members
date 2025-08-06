@@ -2,7 +2,7 @@
 
 This project provides an interactive HTML component designed to showcase employee members of the GeoHazard and Geological Engineering Workgroup at Delve Underground. Each member is displayed in a card layout with a headshot, name, and position. Clicking a card opens a popup containing the employee’s full biography.
 
-This component is intended for embedding in a marketing story map or internal Delve web pages.
+This component is intended for embedding in the Delve Underground GeoHazard and Geological Engineering Workgroup marketing story map.
 
 ## Features
 
@@ -27,7 +27,7 @@ To add a new employee to the grid:
 ### 1. Upload the Headshot
 
 - Save a square-format headshot image (`.jpg` or `.png`) to the `/headshots/` folder in the main GitHub repository.
-- Recommended dimensions: around 1800×1800 pixels.
+- Recommended dimensions: around 1800×1800 pixels (i.e., 1:1 aspect ratio).
 
 ### 2. Add a Card to `index.html`
 
