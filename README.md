@@ -13,8 +13,11 @@ This HTML is designed to be embedded into the Delve Underground GeoHazard and Ge
 **File Structure:**
 /project-root
 │
+
 ├── index.html     # Main HTML file (contains all layout and logic)
+
 │
+
 └── /headshots     # Folder containing all employee headshots
 
 **How to Add a New Team Member:**
