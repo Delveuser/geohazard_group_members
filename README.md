@@ -47,7 +47,7 @@ Note: The position of the new block determines the employee's location in the gr
 Maintain approximate hierarchy order:  
 Principal → Associate → Senior Project → Project → Staff.
 
-**When pasting the template, be sure to preserve all quotation marks (' and "), especially inside the onclick attribute. Improper formatting may break the pop-up functionality.**
+**When pasting into the template provided, be sure to preserve all quotation marks (' and "), especially inside the onclick attribute. Improper formatting may break the pop-up functionality.**
 
 #### Template:
 ```html
