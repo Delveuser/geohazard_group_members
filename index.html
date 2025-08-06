@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Cards with Popups</title>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px 10px;
+            justify-content: center;
+            max-width: 1280px;
+            margin: auto;
+        }
+        .employee-card {
+            background: white;
+            border-radius: 10px;
+            border: 1.5px solid #ddd;
+		padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+        }
+        .employee-card img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ddd;
+        }
+        .employee-card h3 {
+		color: #31636b;
+            margin: 5px 0 3px;
+            font-size: 18px;
+        }
+        .employee-card p {
+            color: gray;
+		margin: 0 5px 5px;
+            font-size: 14px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+		z-index: 1100;
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+		transition: opacity 0.3s ease;
+		opacity: 0;
+        }
+        .popup h3 {
+		color: #31636b;
+            margin-top: 0;
+        }
+        .popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(4px);
+		-webkit-backdrop-filter: blur(4px);
+		background: rgba(255, 255, 255, 0.3);
+    		z-index: 1000;
+        }
+	.employee-card:hover,
+	.employee-card:focus {
+		outline: 2px solid #31636b;
+		box-shadow: 0 0 10px rgba(49, 99, 107, 0.4);
+	}
+	@media (max-width: 600px) {
+    		.grid-container {
+        		padding: 10px;
+        		grid-template-columns: repeat(2, 1fr);
+    		}
+
+    		.employee-card {
+        		max-width: none;
+        		margin: 0;
+    		}
+	}
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="employee-card" onclick="openPopup('Jamie Schick', 'James (Jamie) is a principal engineering geologist with 28 years of experience in the practical application of the geological sciences to both large- and small-scale engineering, permitting, and environmental projects for both the public and private sectors. He has expertise in detailed site characterizations as well as broad general surveys for projects involving tunnels, dams, transportation, trenchless crossings, pipelines, industrial facilities, and power generation sites. Jamie has extensive experience with unstable rock and soil slope investigations and was previously the state rock slope geologist for the Oregon Department of Transportation. He has worked on and managed numerous multidisciplinary teams to deliver projects efficiently.')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Schick_Jamie_Headshot.jpg" alt="Jamie Schick">
+            <h3>Jamie Schick</h3>
+            <p>Principal Engineering Geologist</p>
+        </div>
+        <div class="employee-card" onclick="openPopup('Jim Struthers', 'Jim is a Principal Engineering Geologist at Delve Underground with a practice that focusses on rock mechanics and slope stability issues, primarily for transportation facilities.  He has worked as a geotechnical professional in the Pacific Northwest for more than 28 years and enjoyed a varied career that includes work on landslide and rockfall mitigation projects as well as on the SR 520 Bridge Replacement and Alaskan Way Viaduct Programs.  Prior to joining Delve, Jim was the Chief Engineering Geologist for the Washington State Department of Transportation. Jim has a BS degree in geological sciences from the University of Washington with an emphasis on structural geology and tectonics. Jim is currently a member of the Washington State Geology Licensing Board.')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Struthers_James_Headshot.jpg" alt="Jim Struthers">
+            <h3>Jim Struthers</h3>
+            <p>Principal Engineering Geologist</p>
+        </div>
+		<div class="employee-card" onclick="openPopup('Bryan Duevel', 'Bryan has 23 years of geotechnical and construction engineering experience on a wide breadth of projects including tunnels, dams, pipelines, and water resource and hydroelectric infrastructure. He has managed teams developing designs for large, multidisciplinary projects through all phases including the initial development of field investigation programs, detailed design, and support during construction. Bryan has extensive experience in site characterization, rock/soil slope stability analyses, embankment design, excavation support systems, seismic hazard evaluations, tunnel condition assessments, rehabilitation, and design. He has led the development of numerous projects\' design reports, construction specifications, and final design drawings.')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Duevel_Bryan_Headshot.jpg" alt="Bryan Duevel">
+            <h3>Bryan Duevel</h3>
+            <p>Principal Engineer</p>
+        </div>
+	    	<div class="employee-card" onclick="openPopup('Bill Gates', 'William (Bill) C.B. Gates, PhD, PE, D.GE, LEG, CEG, P.Eng., specializes in geotechnical engineering, rock engineering, blasting, and hydrogeology, with over 54 years of hands-on experience worldwide. He has managed or designed many project types—from landslide, rock slope, rock foundation, and soils engineering, to modeling and kinematic analysis of soil and rock slopes employing various software packages. Presently, he is the firm’s manager of Idaho Transportation Department’s Term Agreement for Geotechnical Engineering, and on-call consultant for rock engineering and blasting in Districts 1 and 2 and emergency response for rockfall statewide. He also provides comprehensive rock blasting and demolitions QA services for BNSF and UPRR Railroads and is on their speed dial for emergency rockfall problems.')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Gates_Bill_Headshot.jpg" alt="Bill Gates">
+            <h3>Bill Gates</h3>
+            <p>Principal Engineering Geologist</p>
+        </div>
+		<div class="employee-card" onclick="openPopup('Shaun Cordes', 'Shaun is an Associate Engineering Geologist at Delve Underground with a strong emphasis in geomorphology, GIS analysis, geohazard assessments, and slope stability issues. Shaun completed his B.S. and M.S. in geology at Humboldt State University and has been working throughout the west coast for 12 years, with the last 8 years primarily focused in the Pacific Northwest. ')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Cordes_Shaun_Headshot.jpg" alt="Shaun Cordes">
+            <h3>Shaun Cordes</h3>
+            <p>Associate Engineering Geologist</p>
+        </div>
+		<div class="employee-card" onclick="openPopup('Jeff Quinn', 'Jeff is an associate engineer at Delve Underground with 18 years of geotechnical experience in the Pacific Northwest. Jeff has worked on a wide variety of civil projects including water and wastewater treatment facilities, pipeline conveyance, transportation infrastructure, as well as landslide mitigation. Jeff has extensive technical experience in seismic hazards evaluations, slope stability, liquefaction analyses, post-liquefaction settlement and residual-strength evaluations, seismic slope stability, and lateral spread analysis.')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Quinn_Jeff_Headshot.jpg" alt="Jeff Quinn">
+            <h3>Jeff Quinn</h3>
+            <p>Associate Engineer</p>
+        </div>
+		<div class="employee-card" onclick="openPopup('Mark Pinske', 'Mark is an Associate Geotechnical Engineer at Delve Underground with an emphasis in retaining wall design, geotechnical investigations, slope stability analysis, foundation design, and tunnel inspection and repairs. Mark completed his B.S. and M.S. in civil and geotechnical engineering at UC Davis and has been working on the west coast for 13 years, primarily focused in the Pacific Northwest.')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Pinske_Mark_Headshot.jpg" alt="Mark Pinske">
+            <h3>Mark Pinske</h3>
+            <p>Associate Engineer</p>
+        </div>
+		<div class="employee-card" onclick="openPopup('Malcolm Perkins', 'Malcolm Perkins is a Senior Project Engineer at Delve Underground, specializing in geotechnical analysis and design. His expertise includes interpreting subsurface conditions, designing geotechnical structures, and providing design services during construction. Malcolm holds a B.S. in Civil Engineering from Case Western Reserve University and an M. Eng. in Geotechnical Engineering from Cornell University. He has seven years of experience working on projects throughout the Pacific Northwest.')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Perkins_Malcolm_Headshot.jpg" alt="Malcolm Perkins">
+            <h3>Malcolm Perkins</h3>
+            <p>Senior Project Engineer</p>
+        </div>
+		<div class="employee-card" onclick="openPopup('Ethan Guzek', 'Ethan is a senior project geologist with six years of experience working on geohazards and geotechnical engineering projects for transportation agencies, railway companies, public utility districts, and other municipalities. Since receiving his master’s degree in applied geosciences from the University of Washington in 2019, Ethan has applied his knowledge of rock mechanics toward rockfall mitigation, bridge design, tunnel, and hydroelectric projects.')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Guzek_Ethan_Headshot.jpg" alt="Ethan Guzek">
+            <h3>Ethan Guzek</h3>
+            <p>Senior Project Engineering Geologist</p>
+        </div>
+		<div class="employee-card" onclick="openPopup('Luke Ferguson', 'Luke is a Senior Project Geotechnical Engineer at Delve Underground with a strong emphasis in subsurface characterization, design and construction of underground infrastructure such as foundations, excavations, and pipelines, geohazard assessments, and slope stability characterization and remediation. Luke is also experienced with settlement and dewatering analyses and retaining wall design and construction. Luke completed his Bachelor\'s degree at Pomona College and his M.S.C.E at the University of Washington and has been working throughout the western United States for the last 10 years. Luke is licensed as a Professional Engineer in Oregon, California, and Montana.')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Ferguson_Luke_Headshot.jpg" alt="Luke Ferguson">
+            <h3>Luke Ferguson</h3>
+            <p>Senior Project Engineer</p>
+        </div>
+		<div class="employee-card" onclick="openPopup('Cecilia Burke', 'Cecilia is a geotechnical Project Engineer at Delve Underground who has been working in the Pacific Northwest for six years. She has experience in analysis and design of geotechnical structures, construction inspection of geotechnical structures, development and monitoring of geotechnical exploration programs, and interpretation of subsurface conditions. Cecilia has an M.S. in Geotechnical Engineering from the University of California, Berkeley and a Professional Engineer license in Washington State.')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Burke_Cecilia_Headshot.jpg" alt="Cecilia Burke">
+            <h3>Cecilia Burke</h3>
+            <p>Project Engineer</p>
+        </div>
+		<div class="employee-card" onclick="openPopup('Britt Dayley', 'Brittany Dayley is a Project Engineering Geologist at Delve Underground, specializing in underground and surface mining, geotechnical and mineral resource site investigations, as well as geohazard and slope stability assessments. She earned a B.S. in Geology from the University of Oregon and has spent over a decade working on diverse projects across the western United States, with the last five years primarily focused on the Pacific Northwest.')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Dayley_Brittany_Headshot.jpg" alt="Britt Dayley">
+            <h3>Britt Dayley</h3>
+            <p>Project Engineering Geologist</p>
+        </div>
+		<div class="employee-card" onclick="openPopup('Jon Ingram', 'Jon is a Project Engineering Geologist with Delve Underground with a strong emphasis in rock/soil characterization, geohazard assessments, and excavation and reinforcement for cutwalls, tunnels, and shaft construction. Jon has worked as both a geologist, inspector, and materials inspector throughout the west coast for 6 years after obtaining his geology B.S. at Portland State University and M.S. at New Mexico State University.  ')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Ingram_Jonathan_Headshot.jpg" alt="Jon Ingram">
+            <h3>Jon Ingram</h3>
+            <p>Project Engineering Geologist</p>
+        </div>
+		<!-- <div class="employee-card" onclick="openPopup('Jim Siemens', 'Jim is a Senior Staff Geologist at Delve Underground with an emphasis in field geologic and geotechnical exploration, geophysical exploration, rock and soil slope rehabilitation, and Civil/Geotechnical construction inspection. Jim completed his B.S. in Geology from Oregon State University and has been working on the west coast for 5 years, primarily focused in the Pacific Northwest. ')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Siemens,%20James_Headshot.jpg" alt="Jim Siemens">
+            <h3>Jim Siemens</h3>
+            <p>Senior Staff Geologist</p>
+        </div> -->
+		<div class="employee-card" onclick="openPopup('Madison Callan', 'Madison Callan is a Staff Engineering Geologist at Delve Underground with experience in geotechnical site investigation, soil and rock mechanics, and slope stability assessments. Madison earned B.S. degrees in Environmental Science, Geology and Environmental Engineering from the University of Texas at Austin and a M.S. in Geosystems Engineering from the University of California, Berkeley. ')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Callan_Madison_Headshot.jpg" alt="Madison Callan">
+            <h3>Madison Callan</h3>
+            <p>Staff Engineering Geologist</p>
+        </div>
+		<div class="employee-card" onclick="openPopup('Breauna Murray', 'Breauna Murray is a Staff Engineering Geologist at Delve Underground, where she specializes in surface mapping, ArcGIS analysis, and field safety. She holds a Bachelor of Science in Geology from Wayne State University in Detroit, Michigan, and a Master of Science in Geology from the South Dakota School of Mines and Technology. Her graduate research focused on identifying geologic slip markers in southwestern Alaska, contributing valuable insights into regional tectonics and fault movement.')">
+            <img src="https://raw.githubusercontent.com/oromero-cld/delve/main/Murray_Breauna_Headshot.jpg" alt="Breauna Murray">
+            <h3>Breauna Murray</h3>
+            <p>Staff Engineering Geologist</p>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="popupOverlay" onclick="closePopup()"></div>
+    <div class="popup" id="popup">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h3 id="popupTitle"></h3>
+        <p id="popupContent"></p>
+    </div>
+
+    <script>
+        function openPopup(title, content) {
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('popupOverlay');
+
+        document.getElementById('popupTitle').textContent = title;
+        document.getElementById('popupContent').textContent = content;
+
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+
+        // Trigger fade-in
+        requestAnimationFrame(() => {
+            popup.style.opacity = '1';
+        });
+
+        popup.focus();
+    }
+
+    function closePopup() {
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('popupOverlay');
+
+        // Trigger fade-out
+        popup.style.opacity = '0';
+
+        // Wait for the transition to complete before hiding
+        setTimeout(() => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        }, 300); // Match the CSS transition duration
+    }
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closePopup();
+        }
+    });
+    </script>
+</body>
+</html>
