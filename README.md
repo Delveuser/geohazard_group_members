@@ -13,6 +13,7 @@ This component is intended for embedding in the Delve Underground GeoHazard and 
 
 ## Preview
 
+Preview of the Interactive Employee Cards site as of August 6, 2025.
 ![Screenshot of employee cards](./screenshots/employee-cards-preview.png)
 
 ## File Structure
