@@ -27,7 +27,7 @@ To add a new employee to the grid:
 ### 1. Upload the Headshot
 
 - Save a square-format headshot image (`.jpg` or `.png`) to the `/headshots/` folder in the main GitHub repository.
-- Recommended dimensions: around 110×110 pixels.
+- Recommended dimensions: around 1800×1800 pixels.
 
 ### 2. Add a Card to `index.html`
 
