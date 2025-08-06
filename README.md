@@ -4,6 +4,8 @@ This project provides an interactive HTML component designed to showcase employe
 
 This component is intended for embedding in the Delve Underground GeoHazard and Geological Engineering Workgroup marketing story map.
 
+ **Live Site:** [https://delveuser.github.io/geohazard_group_members/](https://delveuser.github.io/geohazard_group_members/)
+
 ## Features
 
 - Responsive grid layout – Adapts to screen size for optimal viewing on mobile and desktop.
