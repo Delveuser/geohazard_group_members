@@ -1,0 +1,1 @@
+This project provides an interactive HTML component designed to showcase employee members of the GeoHazard and Geological Engineering Workgroup at Delve Underground. The employee cards include pop-ups with detailed descriptions, bios, and roles, and are intended to be embedded in a marketing story map.
