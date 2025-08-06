@@ -42,10 +42,12 @@ To add a new employee to the grid:
 
 ### 2. Add a Card to `index.html`
 
-Paste the following code block within the existing employee cards section of the `<body>`.  
+Paste the following code block within the existing employee cards section of the `<body>`. 
 Note: The position of the new block determines the employee's location in the grid.  
 Maintain approximate hierarchy order:  
 Principal → Associate → Senior Project → Project → Staff.
+
+**When pasting the template, be sure to preserve all quotation marks (' and "), especially inside the onclick attribute. Improper formatting may break the pop-up functionality.**
 
 #### Template:
 ```html
