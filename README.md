@@ -4,16 +4,12 @@ This project provides an interactive HTML component designed to showcase employe
 
 This component is intended for embedding in a marketing story map or internal Delve web pages.
 
----
-
 ## Features
 
 - Responsive grid layout – Adapts to screen size for optimal viewing on mobile and desktop.
 - Interactive popups – Clicking a card reveals a detailed employee bio.
 - Popup overlay with blur effect – Enhances user focus on content.
 - Keyboard support – Press `Escape` to close the popup.
-
----
 
 ## File Structure
 
@@ -23,8 +19,6 @@ This component is intended for embedding in a marketing story map or internal De
 ├── index.html           # Main HTML file with layout and functionality
 └── /headshots/          # Folder containing square-format employee images
 ```
-
----
 
 ## Adding a New Team Member
 
@@ -56,8 +50,6 @@ Principal → Associate → Senior Project → Project → Staff.
 - Replace `Paste Employee Bio Here` with their biography text.
 - Replace `headshot_image_name.jpg` with the actual filename of the uploaded image.
 
----
-
 ## Example
 
 ```html
@@ -67,8 +59,6 @@ Principal → Associate → Senior Project → Project → Staff.
     <p>Senior Project Geologist</p>
 </div>
 ```
-
----
 
 ## Notes
 
